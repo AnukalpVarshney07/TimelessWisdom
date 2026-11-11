@@ -1,0 +1,319 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #101114;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+  width: 100%;
+  height: 68px;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #292a30;
+  background: #15161a;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: #999;
+}
+
+.fullscreen-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid #37383e;
+  border-radius: 8px;
+  background: #222329;
+  color: white;
+  cursor: pointer;
+}
+
+.fullscreen-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.main-container {
+  width: 100%;
+  padding: 12px 8px 8px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.heading h1 {
+  font-size: clamp(20px, 3vw, 28px);
+  margin-bottom: 7px;
+}
+
+.heading p {
+  font-size: 13px;
+  color: #96969e;
+}
+
+/* Loading */
+
+.loading {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #aaa;
+}
+
+.spinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid #333;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Book */
+
+.reader {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.book-container {
+  width: 100%;
+  height: min(78dvh, 850px);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#book {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.page {
+  background: white;
+  overflow: hidden;
+}
+
+.page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Navigation */
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.nav-btn {
+  width: 52px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #42434a;
+  border-radius: 10px;
+  background: #25262c;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-btn:hover {
+  background: #3a3b43;
+}
+
+.nav-btn:active {
+  transform: scale(0.94);
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.nav-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.page-info {
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+}
+
+.error-message {
+  text-align: center;
+  padding: 30px;
+  color: #ff7777;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .main-container {
+    padding: 22px 12px;
+  }
+
+  .book-container {
+    height: min(68dvh, 650px);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .topbar {
+    height: 58px;
+    padding: 0 16px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .fullscreen-btn {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .main-container {
+    padding: 8px 4px;
+  }
+
+  .heading {
+    margin-bottom: 8px;
+  }
+
+  .book-container {
+    height: 76dvh;
+    min-height: 280px;
+  }
+
+  .heading h1 {
+    font-size: 21px;
+  }
+
+  .navigation {
+    margin-top: 15px;
+  }
+
+  .nav-btn {
+    width: 48px;
+    height: 45px;
+  }
+
+  .page-info {
+    font-size: 12px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 380px) {
+  .book-container {
+    height: 62dvh;
+  }
+
+  .nav-btn {
+    width: 44px;
+    height: 43px;
+  }
+}
+
+/* Landscape phones */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .heading {
+    display: none;
+  }
+
+  .main-container {
+    padding: 8px;
+  }
+
+  .book-container {
+    height: 76dvh;
+    min-height: 200px;
+  }
+
+  .navigation {
+    margin-top: 8px;
+  }
+
+  .nav-btn {
+    height: 38px;
+  }
+}
